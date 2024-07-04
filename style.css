@@ -5,7 +5,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('images/download.jpg') no-repeat center center fixed;
+    background: url('images/backround.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff; /* Ensures text is readable over the background image */
 }
@@ -25,7 +25,7 @@ header {
 }
 
 .logo {
-    height: 10px; /* Adjust the height as needed */
+    height: 70px; /* Adjust the height as needed */
     margin-right: 5px;
 }
 
@@ -47,10 +47,21 @@ nav ul {
             padding: 5px 10px;
         }
 
-section {
-    margin: 20px;
+main {
+    display: grid;
+    gap: 20px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+section {
+    padding: 20px;
+    background: rgba(186, 104, 200, 0.8); /* Light purple semi-transparent background */
     border-radius: 5px;
     color: #000; /* Ensure text is readable on the section background */
 }
