@@ -2,10 +2,10 @@
 
 /* Add global styles for the body */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('images/backround.jpg') no-repeat center center fixed;
+    background: url('images/background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff; /* Ensures text is readable over the background image */
 }
@@ -16,7 +16,7 @@ header {
     align-items: center;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
     color: #fff;
-    padding: 10px 20px;
+    padding: 20px 60px;
 }
 
 .logo-title {
@@ -25,8 +25,8 @@ header {
 }
 
 .logo {
-    height: 70px; /* Adjust the height as needed */
-    margin-right: 5px;
+    height: 85px; /* Adjust the height as needed */
+    margin-right: 20px;
 }
 
 nav ul {
@@ -48,26 +48,47 @@ nav ul {
         }
 
 main {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
-    padding: 20px;
+    padding-left: 500px;
+    padding-right: 500px;
 }
 
 .content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
     gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
 }
 
 section {
+    flex: 1;
     padding: 20px;
     background: rgba(186, 104, 200, 0.8); /* Light purple semi-transparent background */
     border-radius: 5px;
     color: #000; /* Ensure text is readable on the section background */
+    min-width: 250px; /* Ensure text is readable on the section background */
 }
+    section.welcome {
+        width: 100%;
+        max-width: 1000px;
+        text-align: center;
+    }
 
     section h2 {
         margin-top: 0;
+    }
+
+    section.achievements {
+        width: 100%;
+        max-width: 1200px;
+        background: rgba(186, 104, 200, 0.8); /* Light purple semi-transparent background */
+        border-radius: 5px;
+        padding: 20px;
     }
 
 footer {
@@ -78,4 +99,14 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    section.achievements {
+        max-width: 100%;
+    }
 }
