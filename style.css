@@ -52,8 +52,9 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding-left: 500px;
-    padding-right: 500px;
+    padding-left: 350px;
+    padding-right: 350px;
+    padding-bottom: 100px;
 }
 
 .content-grid {
@@ -68,7 +69,7 @@ main {
 section {
     flex: 1;
     padding: 20px;
-    background: rgba(186, 104, 200, 0.8); /* Light purple semi-transparent background */
+    background: rgba(211, 211, 211, 0.8); /* Light purple semi-transparent background */
     border-radius: 5px;
     color: #000; /* Ensure text is readable on the section background */
     min-width: 250px; /* Ensure text is readable on the section background */
@@ -86,17 +87,51 @@ section {
     section.achievements {
         width: 100%;
         max-width: 1200px;
-        background: rgba(186, 104, 200, 0.8); /* Light purple semi-transparent background */
+        background: rgba(211, 211, 211, 0.8); /* Light purple semi-transparent background */
         border-radius: 5px;
         padding: 20px;
     }
+
+    section.personal-info {
+        width: 100%;
+        max-width: 1200px;
+        background: rgba(211, 211, 211, 0.8); /* Light grey semi-transparent background */
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+.personal-info .video {
+    margin-bottom: 20px;
+}
+
+.personal-info .social-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+    .personal-info .social-links ul li {
+        margin: 0;
+    }
+
+        .personal-info .social-links ul li a {
+            color: #000;
+            text-decoration: none;
+            padding: 0px 6px 6px 6px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+
+.personal-info .director-info {
+    margin-top: 20px;
+}
 
 footer {
     text-align: center;
     padding: 10px 0;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
     color: #fff;
-    position: fixed;
     width: 100%;
     bottom: 0;
 }
