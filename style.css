@@ -48,12 +48,22 @@ nav ul {
         }
 
 main {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     padding-left: 350px;
     padding-right: 350px;
+    padding-bottom: 100px;
+}
+.sch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
     padding-bottom: 100px;
 }
 
@@ -132,6 +142,73 @@ section {
 .personal-info .director-info {
     margin-top: 20px;
 }
+
+/* style.css */
+
+#roster-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.player {
+    background: #D3D3D3;
+    border: 2px solid #dee2e6;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+}
+.player-img {
+    width: 100%;
+    height: 250px;
+    border-radius: 20%;
+    margin-bottom: 10px;
+}
+label, select {
+    font-size: 16px;
+    margin: 10px;
+}
+/* Other existing styles */
+
+table {
+    border-collapse: collapse;
+    margin: 20px;
+    background-color: #fff;
+    border: 2px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 1000px;
+    align-content: center;
+  
+}
+
+
+
+th,
+td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: center;
+    color: black;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #343a40;
+}
+
+.highlight {
+    background-color: #f8f9fa;
+    color: black;
+}
+
+.special {
+    background-color: #f0f0f0;
+}
+
 
 footer {
     text-align: center;

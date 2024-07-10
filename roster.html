@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow Six Siege K-State Team - Roster</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-title">
+            <img src="images/logo.png" alt="Team Logo" class="logo">
+            <h1>KSU R6S E-Sports</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="roster.html">Roster</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Team Roster</h1>
+        <label for="season-select">Select Season:</label>
+        <select id="season-select" onchange="showRoster()">
+            <option value="2024">Spring 2024</option>
+            <option value="2023">Fall 2024</option>
+            <!-- Add more seasons as needed -->
+        </select>
+        <div id="roster-container">
+            <!-- Roster will be displayed here -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Rainbow Six Siege K-State Team. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const rosters = {
+            "2024": [
+                { name: "Sebastian 'Uni' Alturck-Carlos", img: "images/seb.jpg", kd: "1.38", kills: "348", kpg: "9.7" },
+                { name: "Wesley 'Wurm' Wurm", img: "images/wurm.jpg", kd: "1.00", kills: "224", kpg: "6.2" },
+                { name: "Joseph 'String' Liang", img: "images/logo.png", kd: "1.02", kills: "220", kpg: "6.5" },
+                { name: "Jaden 'Green' Fox", img: "images/jaden.jpg", kd: "0.89", kills: "111", kpg: "5.4" },
+                { name: "Gio 'Skoozy' ", img: "images/logo.png", kd: "1.67", kills: "395", kpg: "11.3" },
+                { name: "Colby 'Sneaky' Pierce", img: "images/logo.png", kd: "0.7", kills: "76", kpg: "4.8" },
+                // Add more players
+            ],
+            "2023": [
+                { name: "Sebastian 'Uni' Alturck-Carlos", img: "images/seb.jpg", kd: "1.38", kills: "348", kpg: "9.7" },
+                { name: "Wesley 'Wurm' Wurm", img: "images/wurm.jpg", kd: "1.00", kills: "224", kpg: "6.2" },
+                { name: "Joseph 'String' Liang", img: "images/logo.png", kd: "1.02", kills: "220", kpg: "6.5" },
+                { name: "Jaden 'Green' Fox", img: "images/jaden.jpg", kd: "0.89", kills: "111", kpg: "5.4" },
+                { name: "Gio 'Skoozy' ", img: "images/logo.png", kd: "1.67", kills: "395", kpg: "11.3" },
+                { name: "Colby 'Sneaky' Pierce", img: "images/logo.png", kd: "0.7", kills: "76", kpg: "4.8" },
+                // Add more players
+            ],
+            // Add more seasons
+        };
+
+        function showRoster() {
+            const season = document.getElementById('season-select').value;
+            const rosterContainer = document.getElementById('roster-container');
+            rosterContainer.innerHTML = '';
+
+            rosters[season].forEach(player => {
+                const playerDiv = document.createElement('div');
+                playerDiv.className = 'player';
+
+                const img = document.createElement('img');
+                img.src = player.img;
+                img.alt = player.name;
+                img.className = 'player-img';
+
+                const name = document.createElement('h2');
+                name.textContent = player.name;
+
+                const stats = document.createElement('p');
+                stats.innerHTML = `K/D: ${player.kd}<br>Overall Kills: ${player.kills}<br>Kills per Game: ${player.kpg}`;
+
+                playerDiv.appendChild(img);
+                playerDiv.appendChild(name);
+                playerDiv.appendChild(stats);
+
+                rosterContainer.appendChild(playerDiv);
+            });
+        }
+
+        // Show initial roster
+        document.addEventListener('DOMContentLoaded', showRoster);
+    </script>
+</body>
+</html>

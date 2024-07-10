@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow Six Siege K-State Team - Schedule</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-title">
+            <img src="images/logo.png" alt="Team Logo" class="logo">
+            <h1>KSU R6S E-Sports</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="roster.html">Rosters</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Weekly Schedule</h1>
+        <div id="schedule-container"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Rainbow Six Siege K-State Team. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const scheduleContainer = document.getElementById('schedule-container');
+
+        const weeks = [
+            "Week 1 (Aug 26th - Sept 1st)",
+            "Week 2 (Sept 2nd - Sept 8th)",
+            "Week 3 (Sept 9th - Sept 15th)",
+            "Week 4 (Sept 16th - Sept 22nd)",
+            "Week 5 (Sept 23rd - Sept 29th)",
+            "Week 6 (Sept 30th - Oct 6th)",
+            "Week 7 (Oct 7th - Oct 13th)",
+            "Week 8 (Oct 14th - Oct 20th)",
+            "Week 9 (Oct 14th - Oct 20th)",
+            "Week 10 (Oct 21st - Nov 3rd)",
+            "Week 11 (Nov 4th - Nov 10th)",
+            "Week 12 (Nov 11th - Nov 17th)"
+        ];
+
+        const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+        const events = [
+            { week: 0, day: 0, event: "Practice @7pm" },
+            { week: 0, day: 6, event: "Match vs Team A @5pm" },
+            { week: 1, day: 3, event: "Strategy Meeting @3pm" },
+            { week: 2, day: 2, event: "Scrim @8pm" },
+            // Add more events as needed
+        ];
+
+        function generateTable(weekIndex) {
+            const table = document.createElement('table');
+            table.innerHTML = `
+                    <thead>
+                        <tr>
+                            <th>Day/Week</th>
+                            ${weeks.slice(weekIndex, weekIndex + 4).map(week => `<th>${week}</th>`).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${days.map((day, dayIndex) => `
+                            <tr>
+                                <td class="highlight"><b>${day}</b></td>
+                                ${weeks.slice(weekIndex, weekIndex + 4).map((_, weekSubIndex) => {
+                const weekFullIndex = weekIndex + weekSubIndex;
+                const event = events.find(e => e.week === weekFullIndex && e.day === dayIndex);
+                return `<td>${event ? event.event : ''}</td>`;
+            }).join('')}
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                `;
+            return table;
+        }
+
+        for (let i = 0; i < weeks.length; i += 4) {
+            const table = generateTable(i);
+            scheduleContainer.appendChild(table);
+        }
+    </script>
+</body>
+</html>
