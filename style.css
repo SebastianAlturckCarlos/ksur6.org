@@ -220,11 +220,42 @@ footer {
 }
 
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-title {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    main {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .content-grid {
         flex-direction: column;
-        align-items: center;
     }
-    section.achievements {
+
+    section {
         max-width: 100%;
+    }
+
+    .achievements, .personal-info {
+        max-width: 100%;
+    }
+
+    table {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .personal-info .social-links ul {
+        justify-content: space-around;
     }
 }
