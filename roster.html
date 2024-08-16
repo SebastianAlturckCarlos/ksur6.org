@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rainbow Six Siege K-State Team - Roster</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .team-section {
+            margin-bottom: 40px;
+        }
+
+        .team-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .player-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+
+        
+    </style>
 </head>
 <body>
     <header>
@@ -25,9 +43,9 @@
         <h1>Team Roster</h1>
         <label for="season-select">Select Season:</label>
         <select id="season-select" onchange="showRoster()">
-            <option value="2024">Spring 2024</option>
-            <option value="2023">Fall 2024</option>
-            <!-- Add more seasons as needed -->
+            <option value="2024">Fall 2024</option>
+            <option value="2023s">Spring 2024</option>
+            <option value="2023f">Fall 2023</option>
         </select>
         <div id="roster-container">
             <!-- Roster will be displayed here -->
@@ -39,25 +57,37 @@
 
     <script>
         const rosters = {
-            "2024": [
+            "2024": {
+                "varsity": [
+                    { name: "Player 1", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
+                    { name: "Player 2", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
+                    { name: "Player 3", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
+                    { name: "Player 4", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
+                    { name: "Player 5", img: "images/placeholder.png", kd: "", kills: "", kpg: "" }
+                ],
+                "juniorVarsity": [
+                    { name: "Player 1", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
+                    { name: "Player 2", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
+                    { name: "Player 3", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
+                    { name: "Player 4", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
+                    { name: "Player 5", img: "images/placeholder.png", kd: "", kills: "", kpg: "" }
+                ]
+            },
+            "2023s": [
+                { name: "Sebastian 'Uni' Alturck-Carlos", img: "images/seb.jpg", kd: "1.38", kills: "348", kpg: "9.7" },
+                { name: "Wesley 'Wurm' Wurm", img: "images/wurm.jpg", kd: "1.00", kills: "224", kpg: "6.2" },
+                { name: "Joseph 'String' Liang", img: "images/joe.jpg", kd: "1.02", kills: "220", kpg: "6.5" },
+                { name: "Jaden 'Green' Fox", img: "images/jaden.jpg", kd: "0.89", kills: "111", kpg: "5.4" },
+                { name: "Gio 'Skoozy' ", img: "images/logo.png", kd: "1.67", kills: "395", kpg: "11.3" }
+            ],
+            "2023f": [
                 { name: "Sebastian 'Uni' Alturck-Carlos", img: "images/seb.jpg", kd: "1.38", kills: "348", kpg: "9.7" },
                 { name: "Wesley 'Wurm' Wurm", img: "images/wurm.jpg", kd: "1.00", kills: "224", kpg: "6.2" },
                 { name: "Joseph 'String' Liang", img: "images/joe.jpg", kd: "1.02", kills: "220", kpg: "6.5" },
                 { name: "Jaden 'Green' Fox", img: "images/jaden.jpg", kd: "0.89", kills: "111", kpg: "5.4" },
                 { name: "Gio 'Skoozy' ", img: "images/logo.png", kd: "1.67", kills: "395", kpg: "11.3" },
-                { name: "Colby 'Sneaky' Pierce", img: "images/logo.png", kd: "0.7", kills: "76", kpg: "4.8" },
-                // Add more players
-            ],
-            "2023": [
-                { name: "Sebastian 'Uni' Alturck-Carlos", img: "images/seb.jpg", kd: "1.38", kills: "348", kpg: "9.7" },
-                { name: "Wesley 'Wurm' Wurm", img: "images/wurm.jpg", kd: "1.00", kills: "224", kpg: "6.2" },
-                { name: "Joseph 'String' Liang", img: "images/joe.jpg", kd: "1.02", kills: "220", kpg: "6.5" },
-                { name: "Jaden 'Green' Fox", img: "images/jaden.jpg", kd: "0.89", kills: "111", kpg: "5.4" },
-                { name: "Gio 'Skoozy' ", img: "images/logo.png", kd: "1.67", kills: "395", kpg: "11.3" },
-                { name: "Colby 'Sneaky' Pierce", img: "images/logo.png", kd: "0.7", kills: "76", kpg: "4.8" },
-                // Add more players
-            ],
-            // Add more seasons
+                { name: "Colby 'Sneaky' Pierce", img: "images/logo.png", kd: "0.7", kills: "76", kpg: "4.8" }
+            ]
         };
 
         function showRoster() {
@@ -65,27 +95,98 @@
             const rosterContainer = document.getElementById('roster-container');
             rosterContainer.innerHTML = '';
 
-            rosters[season].forEach(player => {
-                const playerDiv = document.createElement('div');
-                playerDiv.className = 'player';
+            if (season === "2024") {
+                const varsityDiv = document.createElement('div');
+                varsityDiv.className = 'team-section';
+                varsityDiv.innerHTML = '<h2>Varsity</h2>';
 
-                const img = document.createElement('img');
-                img.src = player.img;
-                img.alt = player.name;
-                img.className = 'player-img';
+                const varsityPlayers = document.createElement('div');
+                varsityPlayers.className = 'player-container';
 
-                const name = document.createElement('h2');
-                name.textContent = player.name;
+                rosters[season]["varsity"].forEach(player => {
+                    const playerDiv = document.createElement('div');
+                    playerDiv.className = 'player';
 
-                const stats = document.createElement('p');
-                stats.innerHTML = `K/D: ${player.kd}<br>Overall Kills: ${player.kills}<br>Kills per Game: ${player.kpg}`;
+                    const img = document.createElement('img');
+                    img.src = player.img;
+                    img.alt = player.name;
+                    img.className = 'player-img';
 
-                playerDiv.appendChild(img);
-                playerDiv.appendChild(name);
-                playerDiv.appendChild(stats);
+                    const name = document.createElement('h2');
+                    name.textContent = player.name;
 
-                rosterContainer.appendChild(playerDiv);
-            });
+                    const stats = document.createElement('p');
+                    stats.innerHTML = `K/D: ${player.kd}<br>Overall Kills: ${player.kills}<br>Kills per Game: ${player.kpg}`;
+
+                    playerDiv.appendChild(img);
+                    playerDiv.appendChild(name);
+                    playerDiv.appendChild(stats);
+
+                    varsityPlayers.appendChild(playerDiv);
+                });
+
+                varsityDiv.appendChild(varsityPlayers);
+                rosterContainer.appendChild(varsityDiv);
+
+                const jvDiv = document.createElement('div');
+                jvDiv.className = 'team-section';
+                jvDiv.innerHTML = '<h2>Junior Varsity</h2>';
+
+                const jvPlayers = document.createElement('div');
+                jvPlayers.className = 'player-container';
+
+                rosters[season]["juniorVarsity"].forEach(player => {
+                    const playerDiv = document.createElement('div');
+                    playerDiv.className = 'player';
+
+                    const img = document.createElement('img');
+                    img.src = player.img;
+                    img.alt = player.name;
+                    img.className = 'player-img';
+
+                    const name = document.createElement('h2');
+                    name.textContent = player.name;
+
+                    const stats = document.createElement('p');
+                    stats.innerHTML = `K/D: ${player.kd}<br>Overall Kills: ${player.kills}<br>Kills per Game: ${player.kpg}`;
+
+                    playerDiv.appendChild(img);
+                    playerDiv.appendChild(name);
+                    playerDiv.appendChild(stats);
+
+                    jvPlayers.appendChild(playerDiv);
+                });
+
+                jvDiv.appendChild(jvPlayers);
+                rosterContainer.appendChild(jvDiv);
+            } else {
+                const playerContainer = document.createElement('div');
+                playerContainer.className = 'player-container';
+
+                rosters[season].forEach(player => {
+                    const playerDiv = document.createElement('div');
+                    playerDiv.className = 'player';
+
+                    const img = document.createElement('img');
+                    img.src = player.img;
+                    img.alt = player.name;
+                    img.className = 'player-img';
+
+                    const name = document.createElement('h2');
+                    name.textContent = player.name;
+
+                    const stats = document.createElement('p');
+                    stats.innerHTML = `K/D: ${player.kd}<br>Overall Kills: ${player.kills}<br>Kills per Game: ${player.kpg}`;
+
+                    playerDiv.appendChild(img);
+                    playerDiv.appendChild(name);
+                    playerDiv.appendChild(stats);
+
+                    playerContainer.appendChild(playerDiv);
+                });
+
+                rosterContainer.appendChild(playerContainer);
+            }
         }
 
         // Show initial roster
