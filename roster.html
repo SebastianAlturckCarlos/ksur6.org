@@ -21,7 +21,14 @@
         }
 
 
-        
+
+        .rank-img {
+            width: 70px;
+            height: 70px;
+            margin-left: 5px;
+            
+        }
+
     </style>
 </head>
 <body>
@@ -59,34 +66,35 @@
         const rosters = {
             "2024": {
                 "varsity": [
-                    { name: "Player 1", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
-                    { name: "Player 2", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
-                    { name: "Player 3", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
-                    { name: "Player 4", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
-                    { name: "Player 5", img: "images/placeholder.png", kd: "", kills: "", kpg: "" }
+                    { name: "Player 1", img: "images/placeholder.png", kd: "", kills: "", kpg: "", rankImg: "images/rank-placeholder.png" },
+                    { name: "Player 2", img: "images/placeholder.png", kd: "", kills: "", kpg: "", rankImg: "images/rank-placeholder.png" },
+                    { name: "Player 3", img: "images/placeholder.png", kd: "", kills: "", kpg: "", rankImg: "images/rank-placeholder.png" },
+                    { name: "Player 4", img: "images/placeholder.png", kd: "", kills: "", kpg: "", rankImg: "images/rank-placeholder.png" },
+                    { name: "Player 5", img: "images/placeholder.png", kd: "", kills: "", kpg: "", rankImg: "images/rank-placeholder.png" }
                 ],
                 "juniorVarsity": [
-                    { name: "Player 1", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
-                    { name: "Player 2", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
-                    { name: "Player 3", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
-                    { name: "Player 4", img: "images/placeholder.png", kd: "", kills: "", kpg: "" },
-                    { name: "Player 5", img: "images/placeholder.png", kd: "", kills: "", kpg: "" }
+                    { name: "Player 1", img: "images/placeholder.png", kd: "", kills: "", kpg: "", rankImg: "images/rank-placeholder.png" },
+                    { name: "Player 2", img: "images/placeholder.png", kd: "", kills: "", kpg: "", rankImg: "images/rank-placeholder.png" },
+                    { name: "Player 3", img: "images/placeholder.png", kd: "", kills: "", kpg: "", rankImg: "images/rank-placeholder.png" },
+                    { name: "Player 4", img: "images/placeholder.png", kd: "", kills: "", kpg: "", rankImg: "images/rank-placeholder.png" },
+                    { name: "Player 5", img: "images/placeholder.png", kd: "", kills: "", kpg: "", rankImg: "images/rank-placeholder.png" }
                 ]
             },
             "2023s": [
-                { name: "Sebastian 'Uni' Alturck-Carlos", img: "images/seb.jpg", kd: "1.38", kills: "348", kpg: "9.7" },
-                { name: "Wesley 'Wurm' Wurm", img: "images/wurm.jpg", kd: "1.00", kills: "224", kpg: "6.2" },
-                { name: "Joseph 'String' Liang", img: "images/joe.jpg", kd: "1.02", kills: "220", kpg: "6.5" },
-                { name: "Jaden 'Green' Fox", img: "images/jaden.jpg", kd: "0.89", kills: "111", kpg: "5.4" },
-                { name: "Gio 'Skoozy' ", img: "images/logo.png", kd: "1.67", kills: "395", kpg: "11.3" }
+                { name: "Sebastian 'Uni' Alturck-Carlos", img: "images/seb.jpg", kd: "1.38", kills: "348", kpg: "9.7", rankImg: "images/champ122.png" },
+                { name: "Wesley 'Wurm' Wurm", img: "images/wurm.jpg", kd: "1.00", kills: "224", kpg: "6.2", rankImg: "images/champ122.png" },
+                { name: "Joseph 'String' Liang", img: "images/joe.jpg", kd: "1.02", kills: "220", kpg: "6.5", rankImg: "images/download-Photoroom.png" },
+                { name: "Jaden 'Green' Fox", img: "images/jaden.jpg", kd: "0.89", kills: "111", kpg: "5.4", rankImg: "images/emerald.png" },
+                { name: "Gio 'Skoozy'", img: "images/logo.png", kd: "1.67", kills: "395", kpg: "11.3", rankImg: "images/champ122.png" },
+                { name: "Colby 'Sneaky' Pierce", img: "images/logo.png", kd: "0.7", kills: "76", kpg: "4.8", rankImg: "images/download-Photoroom.png" }
             ],
             "2023f": [
-                { name: "Sebastian 'Uni' Alturck-Carlos", img: "images/seb.jpg", kd: "1.38", kills: "348", kpg: "9.7" },
-                { name: "Wesley 'Wurm' Wurm", img: "images/wurm.jpg", kd: "1.00", kills: "224", kpg: "6.2" },
-                { name: "Joseph 'String' Liang", img: "images/joe.jpg", kd: "1.02", kills: "220", kpg: "6.5" },
-                { name: "Jaden 'Green' Fox", img: "images/jaden.jpg", kd: "0.89", kills: "111", kpg: "5.4" },
-                { name: "Gio 'Skoozy' ", img: "images/logo.png", kd: "1.67", kills: "395", kpg: "11.3" },
-                { name: "Colby 'Sneaky' Pierce", img: "images/logo.png", kd: "0.7", kills: "76", kpg: "4.8" }
+                { name: "Sebastian 'Uni' Alturck-Carlos", img: "images/seb.jpg", kd: "1.38", kills: "348", kpg: "9.7", rankImg: "images/champ122.png" },
+                { name: "Wesley 'Wurm' Wurm", img: "images/wurm.jpg", kd: "1.00", kills: "224", kpg: "6.2", rankImg: "images/champ122.png" },
+                { name: "Joseph 'String' Liang", img: "images/joe.jpg", kd: "1.02", kills: "220", kpg: "6.5", rankImg: "images/download-Photoroom.png" },
+                { name: "Jaden 'Green' Fox", img: "images/jaden.jpg", kd: "0.89", kills: "111", kpg: "5.4", rankImg: "images/emerald.png" },
+                { name: "Gio 'Skoozy'", img: "images/logo.png", kd: "1.67", kills: "395", kpg: "11.3", rankImg: "images/champ122.png" },
+                { name: "Colby 'Sneaky' Pierce", img: "images/logo.png", kd: "0.7", kills: "76", kpg: "4.8", rankImg: "images/download-Photoroom.png" }
             ]
         };
 
@@ -112,14 +120,25 @@
                     img.alt = player.name;
                     img.className = 'player-img';
 
+                    const nameContainer = document.createElement('div');
+                    nameContainer.className = 'name-container';
+
                     const name = document.createElement('h2');
                     name.textContent = player.name;
+
+                    const rankImg = document.createElement('img');
+                    rankImg.src = player.rankImg;
+                    rankImg.alt = `${player.name} Rank`;
+                    rankImg.className = 'rank-img';
+
+                    nameContainer.appendChild(name);
+                    nameContainer.appendChild(rankImg);
 
                     const stats = document.createElement('p');
                     stats.innerHTML = `K/D: ${player.kd}<br>Overall Kills: ${player.kills}<br>Kills per Game: ${player.kpg}`;
 
                     playerDiv.appendChild(img);
-                    playerDiv.appendChild(name);
+                    playerDiv.appendChild(nameContainer);
                     playerDiv.appendChild(stats);
 
                     varsityPlayers.appendChild(playerDiv);
@@ -144,14 +163,25 @@
                     img.alt = player.name;
                     img.className = 'player-img';
 
+                    const nameContainer = document.createElement('div');
+                    nameContainer.className = 'name-container';
+
                     const name = document.createElement('h2');
                     name.textContent = player.name;
+
+                    const rankImg = document.createElement('img');
+                    rankImg.src = player.rankImg;
+                    rankImg.alt = `${player.name} Rank`;
+                    rankImg.className = 'rank-img';
+
+                    nameContainer.appendChild(name);
+                    nameContainer.appendChild(rankImg);
 
                     const stats = document.createElement('p');
                     stats.innerHTML = `K/D: ${player.kd}<br>Overall Kills: ${player.kills}<br>Kills per Game: ${player.kpg}`;
 
                     playerDiv.appendChild(img);
-                    playerDiv.appendChild(name);
+                    playerDiv.appendChild(nameContainer);
                     playerDiv.appendChild(stats);
 
                     jvPlayers.appendChild(playerDiv);
@@ -172,14 +202,25 @@
                     img.alt = player.name;
                     img.className = 'player-img';
 
+                    const nameContainer = document.createElement('div');
+                    nameContainer.className = 'name-container';
+
                     const name = document.createElement('h2');
                     name.textContent = player.name;
+
+                    const rankImg = document.createElement('img');
+                    rankImg.src = player.rankImg;
+                    rankImg.alt = `${player.name} Rank`;
+                    rankImg.className = 'rank-img';
+
+                    nameContainer.appendChild(name);
+                    nameContainer.appendChild(rankImg);
 
                     const stats = document.createElement('p');
                     stats.innerHTML = `K/D: ${player.kd}<br>Overall Kills: ${player.kills}<br>Kills per Game: ${player.kpg}`;
 
                     playerDiv.appendChild(img);
-                    playerDiv.appendChild(name);
+                    playerDiv.appendChild(nameContainer);
                     playerDiv.appendChild(stats);
 
                     playerContainer.appendChild(playerDiv);
